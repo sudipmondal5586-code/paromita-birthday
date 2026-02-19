@@ -1,0 +1,172 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fbc2eb, #a18cd1);
+  color: #333;
+}
+
+/* Screens */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95);
+}
+
+.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Intro */
+#intro h1 {
+  font-size: 2.5rem;
+}
+
+#subtext {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* Card */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 380px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeUp 1s ease;
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.playful-line {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Photo */
+.photo-card {
+  margin: 20px 0;
+}
+
+.photo-placeholder {
+  width: 180px;
+  height: 200px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #777;
+}
+
+.photo-placeholder span {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+/* Button */
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Final */
+.final-message {
+  max-width: 400px;
+  background: rgba(255,255,255,0.95);
+  padding: 30px;
+  border-radius: 20px;
+  animation: fadeUp 1.2s ease;
+}
+
+.final-message p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.signature {
+  font-weight: bold;
+}
+
+/* Floating background */
+.floating-background::before,
+.floating-background::after {
+  content: "💜";
+  position: absolute;
+  font-size: 2rem;
+  animation: float 10s infinite linear;
+  opacity: 0.4;
+}
+
+.floating-background::after {
+  content: "💗";
+  animation-duration: 14s;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-10vh);
+  }
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Confetti canvas */
+#confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
